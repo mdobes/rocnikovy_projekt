@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [ "$1" = "-u" ]
+then
+    echo "force updating schema"
+    php vendor/bin/doctrine orm:schema-tool:update --force --dump-sql
+fi
+
+echo "done"

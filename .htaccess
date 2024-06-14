@@ -1,0 +1,17 @@
+RewriteEngine On
+
+## Konecne nas kod :D
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.php [L]
+#RewriteRule ^ index.html [L]
+
+# Security - Wedos to ma default
+#php_flag register_globals 0
+#php_flag magic_quotes_gpc 0
+#php_flag magic_quotes_runtime 0
+
+<Files "composer.json">
+#Order Allow,Deny
+Deny from all
+</Files>

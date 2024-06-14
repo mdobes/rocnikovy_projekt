@@ -1,0 +1,11 @@
+<div class="card mb-4">
+    <img class="card-img-top" src="{{ post.coverImage }}" alt="{{ post.title }}">
+    <div class="card-body">
+        <h2 class="card-title">{{ post.title }}</h2>
+        <p class="card-text">{{ post.perex }}</p>
+        <a href="/clanek/{{ post.slug }}" class="btn btn-primary">Více &rarr;</a>
+    </div>
+    <div class="card-footer text-muted">
+        <a href="/autor/{{ post.author.username }}">{{ post.author.username }}</a> | {{ post.publishDate|date('j. n. Y') }} | {{ post.readingTime|readingTime }}
+    </div>
+</div>

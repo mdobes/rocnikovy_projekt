@@ -1,0 +1,21 @@
+<div class="col-md-4">
+
+    <div class="card my-4">
+        <h5 class="card-header">Archiv</h5>
+        <div class="card-body">
+            <ul class="list-group">
+                {% for archiv in archive %}
+                    <a href="/archiv/{{ archiv.year }}/{{ archiv.month }}">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            {{ archiv.month|month }} {{ archiv.year }}
+                            <span class="badge badge-primary badge-pill">{{ archiv.total }}</span>
+                        </li>
+                    </a>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+</div>

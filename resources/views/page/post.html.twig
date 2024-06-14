@@ -1,0 +1,39 @@
+{% extends 'layouts/base.html.twig' %}
+
+{% block title %}Domů{% endblock %}
+{#{% block stylesheets %}{% endblock %}#}
+{#{% block javascripts %}{% endblock %}#}
+
+{% block body %}
+    <div class="container">
+
+        <div class="row">
+
+            <!-- Post Content Column -->
+            <div class="col-lg-8">
+
+                <!-- Title -->
+                <h1 class="mt-4">{{ post.title }}</h1>
+
+                <!-- Author -->
+                <p class="lead">
+                    <a href="/autor/{{ post.author.username }}">{{ post.author.username }}</a>
+                    | {{ post.publishDate|date('j. n. Y') }} | {{ post.readingTime|readingTime }}
+                </p>
+
+                <hr>
+
+                <img class="img-fluid rounded" src="{{ post.coverImage }}" alt="{{ post.title }}">
+
+                <hr>
+
+                <p style="font-style: italic">{{ post.perex }}</p>
+                <hr>
+                <!-- Post Content -->
+                <p>{{ post.content|raw }}</p>
+            </div>
+            {% include 'includes/sidebar.html.twig' %}
+        </div>
+
+    </div>
+{% endblock %}

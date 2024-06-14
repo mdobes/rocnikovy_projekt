@@ -1,0 +1,47 @@
+{% extends 'layouts/base.html.twig' %}
+
+{% block title %}Domů{% endblock %}
+{#{% block stylesheets %}{% endblock %}#}
+{#{% block javascripts %}{% endblock %}#}
+
+{% block body %}
+<!-- Page Content -->
+<div class="container">
+
+    <div class="row">
+
+        <!-- Blog Entries Column -->
+        <div class="col-md-8">
+
+            <h1 class="my-4">Příspěvky uživatele {{ author.username }}
+            </h1>
+
+
+            {% for post in posts %}
+                {% include 'includes/post.html.twig' %}
+            {% else %}
+                <div class="alert alert-danger"><b>Uživatel nemá žádné příspěvky</b></div>
+            {% endfor %}
+
+
+            <!-- Pagination -->
+            <ul class="pagination justify-content-center mb-4">
+                {% if (page+1)<=pageCount %}
+                    <li class="page-item">
+                        <a class="page-link" href="?strana={{ page + 1 }}">&larr; Starší</a>
+                    </li>
+                {% endif %}
+                {% if (page-1) > 0 %}
+                    <li class="page-item">
+                        <a class="page-link" href="?strana={{ page - 1 }}">Novější &rarr;</a>
+                    </li>
+                {% endif %}
+            </ul>
+
+        </div>
+
+        {% include 'includes/sidebar.html.twig' %}
+
+    </div>
+    <!-- /.container -->
+    {% endblock %}

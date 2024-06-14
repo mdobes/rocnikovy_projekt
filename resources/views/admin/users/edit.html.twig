@@ -1,0 +1,43 @@
+{% extends 'layouts/admin.html.twig' %}
+
+
+{% block body %}
+<div id="content-wrapper">
+
+    <div class="container-fluid">
+
+        <div class="card mb-3">
+            <div class="card-header">
+                <i class="fas fa-table"></i>
+                Upravit uživatele
+            </div>
+            <div class="card-body">
+                <form method="POST">
+                    <div class="form-group">
+                        <label for="username">Uživatelské jméno</label>
+                        <input type="text" class="form-control" name="username" id="username" required value="{{ dbUser.username }}">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="super-admin">Super admin</label>
+                        <input type="checkbox" name="super-admin" id="super-admin" {% if dbUser.isSuperAdmin %}checked{% endif %}>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="deleted">Může se přihlásit</label>
+                        <input type="checkbox" name="deleted" id="deleted" {% if not dbUser.isDeleted %}checked{% endif %}>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Heslo <code>Pouze pokud chcete změnit</code></label>
+                        <input type="text" class="form-control" name="password" id="password">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Upravit</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

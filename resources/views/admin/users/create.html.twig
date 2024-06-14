@@ -1,0 +1,38 @@
+{% extends 'layouts/admin.html.twig' %}
+
+
+{% block body %}
+    <div id="content-wrapper">
+
+        <div class="container-fluid">
+
+            <div class="card mb-3">
+                <div class="card-header">
+                    <i class="fas fa-table"></i>
+                    Nový uživatel
+                </div>
+                <div class="card-body">
+                    <form method="POST">
+                        <div class="form-group">
+                            <label for="username">Uživatelské jméno</label>
+                            <input type="text" class="form-control" name="username" id="username" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="super-admin">Super admin</label>
+                            <input type="checkbox" name="super-admin" id="super-admin">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">Heslo</label>
+                            <input type="text" class="form-control" name="password" id="password" required>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Vytvořit</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

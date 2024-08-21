@@ -1,5 +1,5 @@
 # Obecné info
-Pro správný běh aplikace je potřeba na webovém serveru mít `PHP 8.2`, databázový server `MySQL` nebo `MariaDB` a nainstalovaný správce balířků `composer`
+Pro správný běh aplikace je potřeba na webovém serveru mít `PHP 8.2`, databázový server `MySQL` nebo `MariaDB` a nainstalovaný správce balíčků `composer`
 
 # Postup instalace na webový server
 
